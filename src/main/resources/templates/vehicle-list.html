@@ -7,10 +7,10 @@
 </head>
 <body>
 <div class="container">
-    <h2 class="my-4">Vehicle List</h2>
+    <h1 class="my-4" style="text-align: center;">Vehicle List</h1>
     <div class="mb-2">
-        Welcome admin <span th:text="${session.userId}"></span><br>
-        <a href="/logout" class="btn btn-secondary">Logout</a><br>
+       <h5 style="text-align: center"> Welcome admin <span th:text="${session.userId}"></span></h5><br>
+        <a href="/logout" class="btn btn-secondary">Logout</a>
         <a href="/vehicles/add" class="btn btn-primary">Add a New Vehicle</a>
     </div>
 

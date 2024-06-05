@@ -7,8 +7,10 @@ import jakarta.persistence.*;
 public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "vehicle_id")
     private Long id;
     private String name;
+    @Column(nullable = true)
     private String model;
     private int yearOfManufacture;
     private String color;

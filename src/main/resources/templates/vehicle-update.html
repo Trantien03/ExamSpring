@@ -7,25 +7,25 @@
 </head>
 <body>
 <div class="container">
-    <h2 class="my-4">Update Vehicle</h2>
+    <h2 class="my-4" >Update Vehicle</h2>
     <form th:action="@{'/vehicles/edit/' + ${vehicle.id}}" method="post">
         <input type="hidden" id="id" name="id" th:value="${vehicle.id}">
 
         <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" name="name" th:value="${vehicle.name}" required>
+            <input style="width: 500px" type="text" class="form-control" id="name" name="name" th:value="${vehicle.name}" required>
         </div>
         <div class="form-group">
             <label for="model">Model:</label>
-            <input type="text" class="form-control" id="model" name="model" th:value="${vehicle.model}" required>
+            <input style="width: 500px" type="text" class="form-control" id="model" name="model" th:value="${vehicle.model}" required>
         </div>
         <div class="form-group">
             <label for="year">Year of Manufacture:</label>
-            <input type="text" class="form-control" id="year" name="yearOfManufacture" th:value="${vehicle.yearOfManufacture}" required>
+            <input style="width: 500px" type="text" class="form-control" id="year" name="yearOfManufacture" th:value="${vehicle.yearOfManufacture}" required>
         </div>
         <div class="form-group">
             <label for="color">Color:</label>
-            <input type="text" class="form-control" id="color" name="color" th:value="${vehicle.color}" required>
+            <input style="width: 500px" type="text" class="form-control" id="color" name="color" th:value="${vehicle.color}" required>
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
     </form>

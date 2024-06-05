@@ -38,6 +38,10 @@ public class LoginController {
         String userId = member.getUserId();
         String password = member.getPassword();
 
+        // Giá trị userId và password trực tiếp
+        String directUserId = "admin";
+        String directPassword = "admin123";
+
         // Check if the user exists and the password is correct
         Optional<Members> optionalMember = memberRepository.findByUserId(userId);
         if (optionalMember.isPresent()) {
@@ -60,10 +64,19 @@ public class LoginController {
             }
         }
 
+        // Kiểm tra giá trị trực tiếp
+        if (userId.equals(directUserId) && password.equals(directPassword)) {
+            // Set user info in session
+            session.setAttribute("userId", directUserId);
+            session.setAttribute("role", "Admin"); // Ví dụ: Set vai trò "Admin"
+            return "redirect:/vehicles/list"; // Redirect to Admin page
+        }
+
         // Authentication failed
         model.addAttribute("error", "Invalid username or password");
         return "index";
     }
+
 
 
     @GetMapping("/logout")

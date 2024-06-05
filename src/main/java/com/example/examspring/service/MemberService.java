@@ -1,6 +1,5 @@
 package com.example.examspring.service;
 
-import com.example.examspring.model.Members;
 import com.example.examspring.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

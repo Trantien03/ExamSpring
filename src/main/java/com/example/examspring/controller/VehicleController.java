@@ -73,9 +73,14 @@ public class VehicleController {
 
     @PostMapping("/add")
     public String addVehicle(@ModelAttribute("vehicle") Vehicle vehicle, HttpSession session) {
-
         if (session.getAttribute("userId") == null) {
             return "redirect:/login";
+        }
+
+        // Kiểm tra xem vehicleName có giá trị không
+        if (vehicle.getName() == null || vehicle.getName().isEmpty()) {
+            // Xử lý lỗi không có tên xe
+            return "redirect:/error";
         }
 
         vehicleRepository.save(vehicle);
